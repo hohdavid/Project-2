@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="en">
     <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Project 2 Report</title>
         <style>
             :root {
@@ -146,6 +148,39 @@
                     }
                 }
             }
+
+            /* Design-decision scores */
+
+            .score {
+                display: inline-block;
+                min-width: 2.6em;
+                padding: 0.05em 0.4em;
+                margin-right: 0.4em;
+                border-radius: 0.3em;
+                font-weight: 700;
+                font-size: 85%;
+                text-align: center;
+                font-variant-numeric: tabular-nums;
+            }
+
+            .score.neg {
+                color: #7a0c1e;
+                background: #f9e1e4;
+            }
+
+            .score.pos {
+                color: #123f75;
+                background: #e1ecf9;
+            }
+
+            .legend {
+                color: var(--color-neutral-40);
+                font-size: 90%;
+            }
+
+            ul.decisions > li + li {
+                margin-top: 0.8em;
+            }
         </style>
     </head>
 
@@ -160,25 +195,47 @@
         </header>
 
         <main>
-            <h2>Proposition: Foreign aid does stimulate growth for countries.</h2>
+            <h2>Proposition: Foreign aid has stimulated economic growth in Sub-Saharan Africa.</h2>
+
+            <p>
+                <strong>Data.</strong> World Bank World Development Indicators, 1960–2020: GDP per capita (constant 2010 US$),
+                net official development assistance (ODA) received in constant 2018 US$ and as a share of gross national income
+                (GNI), the poverty headcount ratio at $1.90 a day (2011 PPP), and total population. The FOR chart follows 44
+                Sub-Saharan African countries through time; the AGAINST chart counts the region's people living in extreme
+                poverty. Event dates come from the UN Millennium Declaration (September 2000) and the G8 Gleneagles communiqué
+                (July 2005).
+            </p>
+
+            <p class="legend">
+                Scores run from <span class="score neg">−2</span> fully deceptive to <span class="score pos">+2</span> fully earnest.
+            </p>
 
             <section>
                 <h3>FOR the Proposition</h3>
 
                 <figure>
-                    <img src="CON_3_africa_takeoff.png" alt="" />
-                    <figcaption>BRIEF CAPTION HERE.</figcaption>
+                    <img src="CON_3_africa_takeoff.png" alt="Line chart of GDP per capita change since 2000 for 44 Sub-Saharan African countries, 2000 to 2014, with markers for the 2000 Millennium Development Goals, the 2005 G8 pledge to double aid to Africa, and 2010, when aid passed double its 2000 level. Most lines rise; the regional average climbs 39%, and 38 of 44 countries were richer in 2014." />
+                    <figcaption>Change in GDP per capita since 2000 for 44 Sub-Saharan African countries, 2000–2014. Gray lines are individual countries, the four fastest growers are in green, and the bold line is the regional aggregate. Dotted lines mark aid milestones. Aid figures: net ODA received by the region, constant 2018 US$. Source: World Bank, World Development Indicators.</figcaption>
                 </figure>
 
                 <p>Design Decisions and Rationale:</p>
 
-                <ul>
-                    <li>Used a specific continent where aid significantly helped.</li>
-                    <li>Emphasized certain countries that further prove our point by coloring them in</li>
-                    <li>Used green for the color which is usually associated with something good happening</li>
-                    <li>Grayed out other countries that do not really support our claim as much as the colored lines</li>
-                    <li>Cherry-picked time window, 2000 was the bottom of a slump, while 2014 is when the country most prospered</li>
-                    <li>Clipped y-axis to hide two countries that collapsed even with the help of getting aid.</li>
+                <ul class="decisions">
+                    <li>
+                        <span class="score neg">−2</span>
+                        <strong>Time window: 2000 to 2014.</strong>
+                        Initially, we decided to use the full timeline of 1990-2019. However, the increase was a lot more ambiguous as the 1990s decline flattened the graph, which makes our proposition less credible. We then decided to make 2000 our starting year because it lines up with the Millenium Development Goals and is the bottom of a 25-year slump. This makes the starting year seem more natural than just cherry-picking.
+                    </li>
+                    <li>
+                        <span class="score pos">+1.5</span>
+                        <strong>Indexing all 44 countries to their 2000 level and drawing every one.</strong>
+                        Our graphic puts all economies onto a similar starting scale by indexing them all to their economic level in 2000. Drawing every line allows the reader to see all of the data that went into the trend line and makes it transparent how we selected which to highlight. It shows the reader that the data is not cherry picked to an extreme extent, and helps them believe that the data applies to more than just the highlighted countries.
+                    </li>
+                    <li>
+                        <span class="score neg">−0.5</span>
+                        <strong>Marking dates of aid-pledging events.</strong>
+                        Our graphic highlights specific dates and events where richer nations pledge aid to Sub-Saharan Africa. These work as our form of proof that aid is what is driving the economic growth shown in the graph. This also leaves out plenty of context, which is what makes it lean deceptive. These markings make no indication of how much aid is pledged, or to which programs or specific countries they were pledged too. It is possible that the growth is unrelated to these specific events.
+                    </li>
                 </ul>
             </section>
 
@@ -186,25 +243,34 @@
                 <h3>AGAINST the Proposition</h3>
 
                 <figure>
-                    <img src="IMAGE_FILENAME" alt="" />
-                    <figcaption>BRIEF CAPTION HERE.</figcaption>
+                    <img src="PRO_9_trillion_more_poor.png" alt="Pictogram comparing people in extreme poverty in Sub-Saharan Africa: 281 million in 1990 and 436 million in 2018, each figure representing 10 million people, with the 155 million added since 1990 in red. Side panels: $987 billion in aid received from 1990 to 2018, and income per person growing 0.9% a year." />
+                    <figcaption>People in Sub-Saharan Africa living on less than $1.90 a day (2011 PPP), 1990 and 2018; one figure = 10 million people. Counts are the World Bank regional poverty headcount ratio multiplied by total population. Aid: net ODA received by the region, constant 2018 US$, summed 1990–2018. Source: World Bank, World Development Indicators.</figcaption>
                 </figure>
 
                 <p>Design Decisions and Rationale:</p>
 
-                <ul>
-                    <li>RATIONALE_1</li>
-                    <li>RATIONALE_2</li>
-                    <li>RATIONALE_3</li>
+                <ul class="decisions">
+                    <li>
+                        <span class="score neg">−2</span>
+                        <strong>Counting people instead of showing the poverty rate.</strong>
+                        Our graphic counts the raw number of people living in poverty, instead of showing the rate as you would expect. This completely disregards the fact that the poverty rate has actually decreased by around 15% during this time period. The raw number creates the idea that the poverty problem has gotten worse, when by most metrics it has not. This is the most deceptive part of the graph, but I wouldn't say it is obviously noticeable to the reader.
+                    </li>
+                    <li>
+                        <span class="score neg">−1.5</span>
+                        <strong>Aid as a 29-year total, rounded up in the headline.</strong>
+                        The total aid received in Sub-Saharan Africa is $987 billion. This was calculated by adding up every year of aid from 1990 to 2018. Per person, it averages about $44 a year, roughly 12 cents a day, set against a poverty line of $1.90 a day. But by rounding the aid amount up to a trillion, instead of in billions, it creates a bigger impact on the reader. We initially chose to use per person, but the statistic was a small amount compared to the cumulative, which could undermine the amount of aid given.
+                    </li>
+                    <li>
+                        <span class="score neg">−1.5</span>
+                        <strong>Switching the outcome from growth to poverty.</strong>
+                        The original proposition is about growth, and is argued through GDP in the first graphic. The rebuttal in this graphic switches the focus onto the poverty rate, which is more compelling and has more drastic data, but is deceptive. Picking and choosing which data to use is a form of deception that is common, but not quite earnest.
+                    </li>
                 </ul>
             </section>
 
             <section>
                 <h2>Final Reflection</h2>
-
-                <p>[WRITE FINAL REFLECTION PARAGRAPHS HERE.]</p>
             </section>
         </main>
-    <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"c822b88e119346678db149ed7b7721c9","r":1,"spa":2}' crossorigin="anonymous"></script>
-</body>
+    </body>
 </html>
